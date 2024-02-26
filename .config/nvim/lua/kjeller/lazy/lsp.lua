@@ -25,6 +25,8 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
+                "bashls",
+                "pyright",
                 "rust_analyzer",
             },
             automatic_installation = false,
