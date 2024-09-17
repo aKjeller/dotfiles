@@ -1,0 +1,11 @@
+import = ["~/.config/alacritty/rose-pine.toml"]
+
+[shell]
+args = ["-l", "-c", "zellij"]
+program = "/bin/bash"
+
+[window]
+#decorations = "None"
+startup_mode = "Maximized"
+dynamic_padding = false
+opacity = 0.9

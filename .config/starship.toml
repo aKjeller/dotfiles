@@ -1,0 +1,9 @@
+[aws]
+format = 'on [$symbol ($profile )]($style)'
+symbol = ""
+#disabled = true
+[aws.region_aliases]
+eu-west-1 = 'eu'
+us-east-1 = 'na'
+cn-northwest-1 = 'cn'
+
