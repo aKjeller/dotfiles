@@ -1,7 +1,7 @@
 import = ["~/.config/alacritty/rose-pine.toml"]
 
 [shell]
-args = ["-l", "-c", "zellij attach -c default"]
+args = ["-l", "-c", "zellij attach --index 0 || zellij"]
 program = "/bin/bash"
 
 [window]
