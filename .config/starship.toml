@@ -7,3 +7,12 @@ eu-west-1 = 'eu'
 us-east-1 = 'na'
 cn-northwest-1 = 'cn'
 
+[java]
+disabled=true
+
+[package]
+disabled=true
+
+[python]
+disabled=true
+
