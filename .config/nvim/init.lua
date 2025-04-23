@@ -863,6 +863,9 @@ require("lazy").setup({
 			sources = {
 				default = { "lsp", "path", "snippets", "lazydev" },
 				providers = {
+					snippets = {
+						min_keyword_length = 1,
+					},
 					lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
 				},
 			},
@@ -876,7 +879,7 @@ require("lazy").setup({
 			-- the rust implementation via `'prefer_rust_with_warning'`
 			--
 			-- See :h blink-cmp-config-fuzzy for more information
-			fuzzy = { implementation = "lua" },
+			fuzzy = { implementation = "prefer_rust_with_warning" },
 
 			-- Shows a signature help window while you type arguments for a function
 			signature = { enabled = true },
