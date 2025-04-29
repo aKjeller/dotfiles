@@ -694,6 +694,7 @@ require("lazy").setup({
 						yaml = {
 							format = {
 								enable = true,
+								singleQuote = true,
 							},
 							hover = true,
 							completion = true,
@@ -716,6 +717,9 @@ require("lazy").setup({
 								"!Select",
 								"!Split",
 								"!Join sequence",
+							},
+							schemaStore = {
+								enable = true,
 							},
 						},
 					},
@@ -806,7 +810,6 @@ require("lazy").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
 				markdown = { "prettier" },
-				yaml = { "prettier" },
 				-- Conform can also run multiple formatters sequentially
 				-- python = { "isort", "black" },
 				--
@@ -928,6 +931,7 @@ require("lazy").setup({
 		config = function()
 			---@diagnostic disable-next-line: missing-fields
 			require("tokyonight").setup({
+				transparent = true, -- Enable this to disable setting the background color
 				styles = {
 					comments = { italic = false }, -- Disable italics in comments
 				},
