@@ -456,6 +456,30 @@ require("lazy").setup({
 		end,
 	},
 
+	-- Copilot
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({
+				suggestion = {
+					enabled = true,
+					auto_trigger = false,
+					hide_during_completion = true,
+					trigger_on_accept = true,
+					keymap = {
+						accept = "<M-y>",
+						next = "<M-n>",
+						prev = "<M-p>",
+						dismiss = "<esc>",
+					},
+				},
+				panel = { enabled = false },
+			})
+		end,
+	},
+
 	-- LSP Plugins
 	{
 		-- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
@@ -818,7 +842,6 @@ require("lazy").setup({
 			},
 		},
 	},
-
 	{ -- Autocompletion
 		"saghen/blink.cmp",
 		event = "VimEnter",
@@ -894,9 +917,13 @@ require("lazy").setup({
 				-- Optionally, set `auto_show = true` to show the documentation after a delay.
 				documentation = { auto_show = false, auto_show_delay_ms = 500 },
 			},
-
 			sources = {
-				default = { "lsp", "path", "snippets", "lazydev" },
+				default = {
+					"lsp",
+					"path",
+					"snippets",
+					"lazydev",
+				},
 				providers = {
 					snippets = {
 						min_keyword_length = 1,
