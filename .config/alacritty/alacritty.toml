@@ -1,6 +1,5 @@
-import = ["~/.config/alacritty/rose-pine.toml"]
 
-[shell]
+[terminal.shell]
 args = ["-l", "-c", "zellij attach --index 0 || zellij"]
 program = "/bin/bash"
 
@@ -9,3 +8,8 @@ program = "/bin/bash"
 startup_mode = "Maximized"
 dynamic_padding = false
 opacity = 0.9
+
+[general]
+import = ["~/.config/alacritty/rose-pine.toml"]
+
+[terminal]
