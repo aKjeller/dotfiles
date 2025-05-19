@@ -1,0 +1,12 @@
+#!/bin/bash
+
+tmux send-keys -t 1 'nvim' C-m
+
+tmux new-window -t 2 -n terminal
+
+tmux new-window -t 3 -n lazygit
+tmux send-keys -t 3 'lazygit' C-m
+
+tmux new-window -t 4
+
+tmux select-window -t 1
