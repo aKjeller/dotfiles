@@ -1,10 +1,9 @@
-
 [terminal.shell]
 program = "/bin/bash"
 
 [window]
-#decorations = "None"
-startup_mode = "Maximized"
+# decorations = "None"
+startup_mode = "Windowed"
 dynamic_padding = false
 opacity = 0.9
 
