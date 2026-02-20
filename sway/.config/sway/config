@@ -27,9 +27,9 @@ include /etc/sway/config-vars.d/*
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /home/ab000408/Pictures/wallpaper/shaded_landscape.png fill
 
-output eDP-1 disable
-output DP-6 mode 2560x1440@99.946Hz scale 1 position 0,0
-output DP-4 mode 2560x1440@99.946Hz scale 1 position 2560,0
+# output eDP-1 disable
+# output DP-6 mode 2560x1440@99.946Hz scale 1 position 0,0
+# output DP-4 mode 2560x1440@99.946Hz scale 1 position 2560,0
 
 # Rose Pine focus styling (higher contrast).
 default_border pixel 3
@@ -71,6 +71,10 @@ input type:pointer {
     natural_scroll disabled
     left_handed disabled
     middle_emulation enabled
+}
+
+input type:touchpad {
+    natural_scroll enabled
 }
 
 # You can get the names of your inputs by running: swaymsg -t get_inputs
