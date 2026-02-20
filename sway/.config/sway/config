@@ -31,6 +31,19 @@ output eDP-1 disable
 output DP-6 mode 2560x1440@99.946Hz scale 1 position 0,0
 output DP-4 mode 2560x1440@99.946Hz scale 1 position 2560,0
 
+# Rose Pine focus styling (higher contrast).
+default_border pixel 3
+default_floating_border pixel 3
+client.focused          #c4a7e7 #c4a7e7 #191724 #ebbcba #c4a7e7
+client.unfocused        #403d52 #403d52 #908caa #403d52 #403d52
+client.focused_inactive #524f67 #524f67 #e0def4 #524f67 #524f67
+client.urgent           #eb6f92 #eb6f92 #191724 #eb6f92 #eb6f92
+
+# Add space between windows and edges.
+gaps inner 5
+gaps outer 0
+smart_gaps on
+
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 ### Idle configuration
