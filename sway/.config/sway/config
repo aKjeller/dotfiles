@@ -221,4 +221,9 @@ bindsym $mod+r mode "resize"
 # Start Waybar instead of swaybar.
 exec_always --no-startup-id sh -c 'pkill -x waybar; waybar'
 
+
+# fix xdg-desktop-portal
+exec systemctl --user import-environment XDG_CURRENT_DESKTOP
+exec dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP=sway
+
 include /etc/sway/config.d/*
