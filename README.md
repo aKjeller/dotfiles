@@ -1,14 +1,15 @@
-# Packages
+# Dotfiles
 
-- [alacritty](https://github.com/alacritty/alacritty)
-- [neovim](https://github.com/neovim/neovim)
-- [starship](https://github.com/starship/starship)
-- [zellij](https://github.com/zellij-org/zellij)
-- [fzf](https://github.com/junegunn/fzf)
-- [ripgrep](https://github.com/BurntSushi/ripgrep)
+Managed with GNU stow.
 
-# Restore configuration
+## Stow All Packages
 
 ```bash
 ./stow.sh
+```
+
+## Stow a Single Package
+
+```bash
+stow -t ~ alacritty
 ```
