@@ -41,11 +41,13 @@
 
   "cpu": {
       "format": "{usage}% ",
-      "tooltip": false
+      "tooltip": false,
+      "on-click": "alacritty -e htop"
   },
 
   "memory": {
-      "format": "{}%  "
+      "format": "{}%  ",
+      "on-click": "alacritty -e htop"
   },
 
   "temperature": {
