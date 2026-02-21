@@ -36,7 +36,7 @@
           "car": "",
           "default": ["", "", ""]
       },
-      "on-click": "pavucontrol"
+      "on-click": "alacritty -e ~/.cargo/bin/wiremix"
   },
 
   "cpu": {

@@ -19,6 +19,7 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu fuzzel
+set $browser firefox
 
 include /etc/sway/config-vars.d/*
 
@@ -89,6 +90,12 @@ input type:touchpad {
 
     # Kill focused window
     bindsym $mod+Shift+q kill
+
+    # Open audio mixer
+    bindsym $mod+Shift+a exec $term -e ~/.cargo/bin/wiremix
+
+    # Open browser
+    bindsym $mod+Shift+b exec $browser
 
     # Start your launcher
     bindsym $mod+d exec $menu
