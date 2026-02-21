@@ -1,0 +1,21 @@
+#!/bin/bash
+
+option=$(echo -e "Lock\nSuspend\nLogout\nReboot\nShutdown" | /usr/bin/fuzzel --dmenu --prompt "Power: ")
+
+case "$option" in
+    "Lock")
+        swaylock -f
+        ;;
+    "Suspend")
+        systemctl suspend
+        ;;
+    "Logout")
+        swaymsg exit
+        ;;
+    "Reboot")
+        systemctl reboot
+        ;;
+    "Shutdown")
+        systemctl poweroff
+        ;;
+esac

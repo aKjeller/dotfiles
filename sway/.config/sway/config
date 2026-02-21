@@ -97,8 +97,21 @@ input type:touchpad {
     # Open browser
     bindsym $mod+Shift+b exec $browser
 
+    # Open 1Password
+    bindsym $mod+Shift+p exec 1password
+
+    # Open files
+    bindsym $mod+Shift+f exec nautilus
+
     # Start your launcher
     bindsym $mod+d exec $menu
+
+    # Screenshot
+    bindsym $mod+Shift+s exec ~/personal/scripts/screenshot
+
+    # Clipboard history
+    exec wl-paste --watch cliphist store
+    bindsym $mod+Shift+v exec cliphist list | fuzzel --dmenu --prompt="Clipboard > " | cliphist decode | wl-copy
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -112,6 +125,9 @@ input type:touchpad {
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+    # Power menu
+    bindsym $mod+Escape exec ~/personal/scripts/power-menu
 #
 # Moving around:
 #

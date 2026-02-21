@@ -1,0 +1,41 @@
+#!/bin/bash
+set -x
+
+shot_type=$(echo -e "Region\nFull screen" | /usr/bin/fuzzel --dmenu --prompt "Screenshot: ")
+
+if [[ -z "$shot_type" ]]; then
+    exit 0
+fi
+
+tmpfile=$(mktemp /tmp/screenshot.XXXXXX.png)
+
+case "$shot_type" in
+    "Region")
+        geometry=$(/usr/bin/slurp)
+        if [[ -z "$geometry" ]]; then
+            rm -f "$tmpfile"
+            exit 0
+        fi
+        /usr/bin/grim -g "$geometry" "$tmpfile"
+        ;;
+    "Full screen")
+        /usr/bin/grim "$tmpfile"
+        ;;
+esac
+
+action=$(echo -e "Copy to clipboard\nSave to file" | /usr/bin/fuzzel --dmenu --prompt "Action: ")
+
+case "$action" in
+    "Copy to clipboard")
+        /usr/bin/wl-copy < "$tmpfile"
+        rm -f "$tmpfile"
+        /usr/bin/notify-send "Screenshot copied to clipboard"
+        ;;
+    "Save to file")
+        mkdir -p "$HOME/Pictures/screenshots"
+        filename="screenshot-$(date +%Y-%m-%d-%H%M%S).png"
+        filepath="$HOME/Pictures/screenshots/$filename"
+        mv "$tmpfile" "$filepath"
+        /usr/bin/notify-send "Screenshot saved" "$filepath"
+        ;;
+esac
