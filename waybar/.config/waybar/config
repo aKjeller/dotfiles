@@ -76,7 +76,8 @@
   },
 
   "network": {
-    "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+    "format-wifi": " {essid}",
+    "format-ethernet": "󰈁",
+    "on-click": "alacritty -e nmtui"
   }
 }
