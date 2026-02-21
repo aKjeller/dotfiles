@@ -25,7 +25,7 @@ include /etc/sway/config-vars.d/*
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/ab000408/Pictures/wallpaper/shaded_landscape.png fill
+output * bg ~/Pictures/wallpaper.png fill
 
 # output eDP-1 disable
 # output DP-6 mode 2560x1440@99.946Hz scale 1 position 0,0
