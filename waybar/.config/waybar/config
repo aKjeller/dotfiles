@@ -5,7 +5,7 @@
 
   "modules-left": ["sway/workspaces", "sway/scratchpad"],
   "modules-center": ["clock"],
-  "modules-right": ["tray", "pulseaudio", "network", "cpu", "memory", "temperature", "battery"],
+  "modules-right": ["tray", "pulseaudio", "network", "cpu", "memory", "temperature", "battery", "custom/notification"],
 
   "clock": {
     "format": "{:%A, %d %B %Y  %H:%M:%S}",
@@ -81,5 +81,26 @@
     "format-wifi": " {essid}",
     "format-ethernet": "󰈁",
     "on-click": "alacritty -e nmtui"
+  },
+
+  "custom/notification": {
+    "tooltip": true,
+    "format": "{0} {icon}",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   }
 }

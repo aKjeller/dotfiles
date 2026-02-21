@@ -128,6 +128,11 @@ input type:touchpad {
 
     # Power menu
     bindsym $mod+Escape exec ~/personal/scripts/power-menu
+
+    # Notification Daemon
+    exec swaync
+    bindsym $mod+n exec swaync-client -t -sw
+    
 #
 # Moving around:
 #

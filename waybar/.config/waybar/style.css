@@ -30,7 +30,7 @@ tooltip {
 #battery,
 #backlight,
 #tray,
-#custom-notifications {
+#custom-notification {
   background: @overlay;
   color: @text;
   margin: 6px 4px;
