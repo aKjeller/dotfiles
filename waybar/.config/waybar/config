@@ -5,7 +5,7 @@
 
   "modules-left": ["sway/workspaces", "sway/scratchpad"],
   "modules-center": ["clock"],
-  "modules-right": ["tray", "pulseaudio", "network", "cpu", "memory", "temperature", "battery", "custom/notification"],
+  "modules-right": ["tray", "custom/discord", "pulseaudio", "network", "cpu", "memory", "temperature", "battery", "custom/notification"],
 
   "clock": {
     "format": "{:%A, %d %B %Y  %H:%M:%S}",
@@ -81,6 +81,14 @@
     "format-wifi": " {essid}",
     "format-ethernet": "󰈁",
     "on-click": "alacritty -e nmtui"
+  },
+
+  "custom/discord": {
+    "format": "{}",
+    "exec": "~/personal/scripts/discord-voice-count",
+    "interval": 30,
+    "return-type": "json",
+    "on-click": "discord"
   },
 
   "custom/notification": {

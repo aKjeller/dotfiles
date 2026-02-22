@@ -1,0 +1,4 @@
+#!/bin/bash
+GUILD_ID="${1:-432179032063475712}"
+count=$(curl -s "https://discord.com/api/guilds/${GUILD_ID}/widget.json" | jq -r '[.members[] | select(.channel_id != null)] | length')
+echo "{\"text\": \"$count  \", \"tooltip\": \"$count members in voice\"}"
