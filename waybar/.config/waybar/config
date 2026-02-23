@@ -4,12 +4,27 @@
   "height": 34,
 
   "modules-left": ["sway/workspaces", "sway/scratchpad"],
-  "modules-center": ["clock"],
-  "modules-right": ["tray", "custom/discord", "pulseaudio", "network", "cpu", "memory", "temperature", "battery", "custom/notification"],
+  "modules-center": ["clock", "custom/notification"],
+  "modules-right": ["tray", "custom/discord", "backlight", "network", "cpu", "memory", "temperature", "pulseaudio", "battery"],
 
   "clock": {
     "format": "{:%A, %d %B %Y  %H:%M:%S}",
-    "tooltip-format": "<big>{:%A, %d %B %Y}</big>\n<tt>{:%H:%M:%S}</tt>",
+    "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "weeks-pos": "left",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#c4a7e7'><b>{}</b></span>",
+        "weekdays": "<span color='#9ccfd8'><b>{}</b></span>",
+        "weeks": "<span color='#908caa'><b>W{:%V}</b></span>",
+        "today": "<span color='#f6c177'><b>{}</b></span>"
+      }
+    },
+    "actions": {
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    },
     "interval": 1
   },
 
@@ -39,6 +54,11 @@
       "on-click": "alacritty -e ~/.cargo/bin/wiremix"
   },
 
+  "backlight": {
+      "format": "{percent}% {icon}",
+      "format-icons": ["", "", "", "", "", "", "", "", ""]
+  },
+
   "cpu": {
       "format": "{usage}% ",
       "tooltip": false,
@@ -64,8 +84,8 @@
           "critical": 15
       },
       "format": "{capacity}% {icon}",
-      "format-full": "{capacity}% {icon}",
-      "format-charging": "{capacity}% ",
+      "format-full": "{capacity}% ",
+      "format-charging": "{capacity}% ",
       "format-plugged": "{capacity}% ",
       "format-alt": "{time} {icon}",
       // "format-good": "", // An empty format will hide the module
@@ -78,8 +98,9 @@
   },
 
   "network": {
-    "format-wifi": " {essid}",
+    "format-wifi": "  {essid}",
     "format-ethernet": "󰈁",
+    "max-length": 10,
     "on-click": "alacritty -e nmtui"
   },
 

@@ -117,6 +117,33 @@ tooltip {
   border-radius: 8px;
 }
 
+#cpu,
+#memory,
+#temperature {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+#cpu {
+  margin-left: 4px;
+  margin-right: 0;
+  border-radius: 10px 0 0 10px;
+  border-right: 1px solid @highlightMed;
+}
+
+#memory {
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0;
+  border-right: 1px solid @highlightMed;
+}
+
+#temperature {
+  margin-left: 0;
+  margin-right: 4px;
+  border-radius: 0 10px 10px 0;
+}
+
 @keyframes blink {
   to {
     background: @love;
