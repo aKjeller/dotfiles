@@ -4,7 +4,7 @@ option=$(echo -e "Lock\nSuspend\nLogout\nReboot\nShutdown" | /usr/bin/fuzzel --d
 
 case "$option" in
     "Lock")
-        swaylock -f
+        swaylock -f -C ~/.config/swaylock/config
         ;;
     "Suspend")
         systemctl suspend
