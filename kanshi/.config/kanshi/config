@@ -2,8 +2,8 @@ profile undocked {
     output eDP-1 enable position 0,0
 }
 
-profile docked-work {
+profile docked-work-mate {
     output eDP-1 disable
-    output DP-6 enable position 0,0
-    output DP-7 enable position 2560,0
+    output 'Lenovo Group Limited P27q-20 V909W97C' enable position 0,0
+    output 'Lenovo Group Limited P27q-20 V909W8Y9' enable position 2560,0
 }
