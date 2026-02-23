@@ -253,6 +253,9 @@ bindsym $mod+r mode "resize"
 # Start Waybar instead of swaybar.
 exec_always --no-startup-id sh -c 'pkill -x waybar; waybar'
 
+# Start kanshi and avoid duplicates on config reload.
+exec_always --no-startup-id sh -c 'pkill -x kanshi; kanshi'
+
 
 # fix xdg-desktop-portal
 exec systemctl --user import-environment XDG_CURRENT_DESKTOP
