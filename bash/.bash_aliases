@@ -1,8 +1,7 @@
 alias ..="cd .."
 alias lg='lazygit'
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias todo='$HOME/personal/dev/todo/target/release/todo'
-alias copybranch="git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/' | clip"
+alias :q="exit"
 
 clip() {
     if [[ -p /dev/stdin ]]; then
