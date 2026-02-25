@@ -2,6 +2,12 @@ profile undocked {
     output eDP-1 enable position 0,0
 }
 
+profile docked-home {
+    output eDP-1 disable
+    output 'ASUSTek COMPUTER INC ROG XG27AQ R6LMQS089554' enable mode 2560x1440@144.006Hz position 0,0
+    output 'ASUSTek COMPUTER INC ROG XG27AQ R6LMQS089560' enable mode 2560x1440@99.946Hz position 2560,0
+}
+
 profile docked-work-mate {
     output eDP-1 disable
     output 'Lenovo Group Limited P27q-20 V909W97C' enable position 0,0
