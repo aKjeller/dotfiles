@@ -1,4 +1,4 @@
-@import "rose-pine-moon.css";
+@import "rose-pine.css";
 
 * {
   border: none;
@@ -25,7 +25,7 @@ tooltip {
 #cpu,
 #memory,
 #temperature,
-#pulseaudio,
+#wireplumber,
 #network,
 #custom-discord,
 #battery,
@@ -36,58 +36,54 @@ tooltip {
   color: @text;
   margin: 6px 4px;
   padding: 4px 10px;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 #workspaces {
   padding: 2px;
 }
 
-#workspaces button {
-  color: @subtle;
-  padding: 2px 8px;
-  margin: 2px;
-  border-radius: 8px;
-  transition: all 0.15s ease;
+#cpu,
+#memory,
+#temperature {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  color: @foam;
 }
 
-#workspaces button:hover {
-  background: @highlightMed;
-  color: @text;
+#cpu {
+  margin-left: 4px;
+  margin-right: 0;
+  border-radius: 8px 0 0 8px;
+  border-right: 1px solid @highlightMed;
 }
 
-#workspaces button.active,
-#workspaces button.focused {
-  background: @pine;
-  color: @base;
-  font-weight: 700;
-  box-shadow: inset 0 0 0 1px @foam;
-}
-
-#workspaces button.urgent {
-  background: @love;
-  color: @base;
+#memory {
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0;
+  border-right: 1px solid @highlightMed;
 }
 
 #clock {
-  color: @foam;
+  color: @rose;
   font-weight: 600;
 }
 
 #network {
-  color: @pine;
+  color: @gold;
 }
 
-#network.disconnected {
-  color: @love;
+#wireplumber {
+  color: @gold;
 }
 
-#pulseaudio {
-  color: @iris;
-}
-
-#pulseaudio.muted {
+#wireplumber.muted {
   color: @muted;
+}
+
+#custom-discord {
+  color: @love;
 }
 
 #battery {
@@ -103,7 +99,37 @@ tooltip {
   animation: blink 1s steps(2, start) infinite;
 }
 
+#temperature {
+  margin-left: 0;
+  margin-right: 4px;
+  border-radius: 0 8px 8px 0;
+}
+
 #temperature.critical {
+  color: @love;
+}
+
+#workspaces button {
+  color: @iris;
+  padding: 0 4px;
+  margin: 0;
+  border-radius: 2px;
+  transition: all 0.15s ease;
+}
+
+#workspaces button:hover {
+  color: @text;
+  background: @highlightMed;
+  border-radius: 6px;
+}
+
+#workspaces button.active,
+#workspaces button.focused {
+  color: @gold;
+  font-weight: 700;
+}
+
+#workspaces button.urgent {
   color: @love;
 }
 
@@ -115,33 +141,6 @@ tooltip {
   -gtk-icon-effect: highlight;
   background: @highlightLow;
   border-radius: 8px;
-}
-
-#cpu,
-#memory,
-#temperature {
-  margin-top: 6px;
-  margin-bottom: 6px;
-}
-
-#cpu {
-  margin-left: 4px;
-  margin-right: 0;
-  border-radius: 10px 0 0 10px;
-  border-right: 1px solid @highlightMed;
-}
-
-#memory {
-  margin-left: 0;
-  margin-right: 0;
-  border-radius: 0;
-  border-right: 1px solid @highlightMed;
-}
-
-#temperature {
-  margin-left: 0;
-  margin-right: 4px;
-  border-radius: 0 10px 10px 0;
 }
 
 @keyframes blink {

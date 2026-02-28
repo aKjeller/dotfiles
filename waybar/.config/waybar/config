@@ -3,13 +3,25 @@
   "position": "top",
   "height": 34,
 
-  "modules-left": ["sway/workspaces", "sway/scratchpad"],
+  "modules-left": ["sway/workspaces", "sway/scratchpad", "tray"],
   "modules-center": ["clock", "custom/notification"],
-  "modules-right": ["tray", "custom/discord", "backlight", "network", "cpu", "memory", "temperature", "pulseaudio", "battery"],
+  "modules-right": ["custom/discord", "backlight", "network", "cpu", "memory", "temperature", "wireplumber", "battery"],
+
+
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "format": "{name}"
+  },
+
+  "tray": {
+      "spacing": 10
+  },
+
 
   "clock": {
-    "format": "{:%A, %d %B %Y  %H:%M:%S}",
-    "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
+    "format": "{:%a, %d %b %Y %H:%M:%S}",
+    "tooltip-format": "<big><tt>{calendar}</tt></big>",
     "calendar": {
       "mode": "month",
       "weeks-pos": "left",
@@ -28,30 +40,11 @@
     "interval": 1
   },
 
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": false,
-    "format": "{name}"
-  },
-
-  "pulseaudio": {
-      // "scroll-step": 1, // %, can be a float
-      "format": "{volume}% {icon} {format_source}",
-      "format-bluetooth": "{volume}% {icon} {format_source}",
-      "format-bluetooth-muted": " {icon} {format_source}",
-      "format-muted": " {format_source}",
-      "format-source": "{volume}% ",
-      "format-source-muted": "",
-      "format-icons": {
-          "headphone": "",
-          "hands-free": "",
-          "headset": "",
-          "phone": "",
-          "portable": "",
-          "car": "",
-          "default": ["", "", ""]
-      },
-      "on-click": "alacritty -e ~/.cargo/bin/wiremix"
+  "wireplumber": {
+    "format": "{icon} {volume:>3}%",
+    "format-muted": "󰖁 {volume:>3}%",
+    "format-icons": ["", "", ""],
+    "on-click": "alacritty -e ~/.cargo/bin/wiremix"
   },
 
   "backlight": {
@@ -66,41 +59,27 @@
   },
 
   "memory": {
-      "format": "{}%  ",
+      "format": "{}% ",
       "on-click": "alacritty -e htop"
   },
 
   "temperature": {
       "critical-threshold": 60,
-      // "format-critical": "{temperatureC}°C {icon}",
       "format": "{temperatureC}°C {icon}",
       "format-icons": ["", "", ""]
   },
 
   "battery": {
-      "states": {
-          // "good": 95,
-          "warning": 30,
-          "critical": 15
-      },
-      "format": "{capacity}% {icon}",
-      "format-full": "{capacity}% ",
-      "format-charging": "{capacity}% ",
-      "format-plugged": "{capacity}% ",
-      "format-alt": "{time} {icon}",
-      // "format-good": "", // An empty format will hide the module
-      // "format-full": "",
-      "format-icons": ["", "", "", "", ""]
-  },
-
-  "tray": {
-      "spacing": 10
+    "format": "{icon} {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-icons": ["", "", "", "", ""],
+    "interval": 2,
   },
 
   "network": {
     "format-wifi": "  {essid}",
-    "format-ethernet": "󰈁",
-    "max-length": 10,
+    "format-ethernet": "",
+    "max-length": 15,
     "on-click": "alacritty -e nmtui"
   },
 
