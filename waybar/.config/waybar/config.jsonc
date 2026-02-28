@@ -3,9 +3,9 @@
   "position": "top",
   "height": 34,
 
-  "modules-left": ["sway/workspaces", "sway/scratchpad", "tray", "mpris"],
+  "modules-left": ["sway/workspaces", "sway/scratchpad", "mpris"],
   "modules-center": ["clock", "custom/notification"],
-  "modules-right": ["custom/discord", "backlight", "network", "cpu", "memory", "temperature", "wireplumber", "battery"],
+  "modules-right": ["custom/discord", "backlight", "network", "cpu", "memory", "temperature", "wireplumber", "battery", "tray"],
 
 
   "sway/workspaces": {
