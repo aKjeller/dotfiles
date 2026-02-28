@@ -253,8 +253,8 @@ bindsym $mod+r mode "resize"
 # Start Waybar instead of swaybar.
 exec_always --no-startup-id sh -c 'pkill -x waybar; waybar'
 
-# Start kanshi and avoid duplicates on config reload.
-exec_always --no-startup-id sh -c 'pkill -x kanshi; kanshi'
+# Start kanshi and avoid duplicates on sway startup.
+exec --no-startup-id sh -c 'pkill -x kanshi; kanshi'
 
 
 # fix xdg-desktop-portal
