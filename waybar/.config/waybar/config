@@ -3,7 +3,7 @@
   "position": "top",
   "height": 34,
 
-  "modules-left": ["sway/workspaces", "sway/scratchpad", "tray"],
+  "modules-left": ["sway/workspaces", "sway/scratchpad", "tray", "mpris"],
   "modules-center": ["clock", "custom/notification"],
   "modules-right": ["custom/discord", "backlight", "network", "cpu", "memory", "temperature", "wireplumber", "battery"],
 
@@ -16,6 +16,15 @@
 
   "tray": {
       "spacing": 10
+  },
+
+  "mpris": {
+    "interval": 1,
+    "format": "{artist} - {title}",
+    "format-disconnected": "",
+    "format-stopped": "",
+    "tooltip-format": "{player}: {artist} - {title}",
+    "on-click": "playerctl play-pause"
   },
 
 

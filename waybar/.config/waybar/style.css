@@ -86,6 +86,10 @@ tooltip {
   color: @love;
 }
 
+#mpris {
+  color: @foam;
+}
+
 #battery {
   color: @foam;
 }
