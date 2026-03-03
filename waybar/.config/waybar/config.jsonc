@@ -20,7 +20,7 @@
 
   "mpris": {
     "interval": 1,
-    "format": "{artist} - {title}",
+    "format": "[ {artist} - {title} ]",
     "format-disconnected": "",
     "format-stopped": "",
     "tooltip-format": "{player}: {artist} - {title}",

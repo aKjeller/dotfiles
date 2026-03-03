@@ -74,6 +74,10 @@ tooltip {
   color: @gold;
 }
 
+#backlight {
+  color: @iris;
+}
+
 #wireplumber {
   color: @gold;
 }
