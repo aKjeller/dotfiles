@@ -491,6 +491,7 @@ require("lazy").setup({
 			_99.setup({
 				provider = _99.OpenCodeProvider,
 				model = "openai/gpt-5.3-codex",
+				tmp_dir = "./99-tmp",
 
 				logger = {
 					level = _99.DEBUG,
@@ -511,8 +512,13 @@ require("lazy").setup({
 				_99.visual()
 			end)
 
-			vim.keymap.set("v", "<leader>9s", function()
+			--- if you have a request you dont want to make any changes, just cancel it
+			vim.keymap.set("n", "<leader>9x", function()
 				_99.stop_all_requests()
+			end)
+
+			vim.keymap.set("n", "<leader>9s", function()
+				_99.search()
 			end)
 		end,
 	},
