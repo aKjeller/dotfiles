@@ -15,6 +15,5 @@ profile docked-work-mate {
 }
 
 profile home {
-    output 'ASUSTek COMPUTER INC ROG XG27AQ R6LMQS089554' enable mode 2560x1440@144.006Hz position 0,0
-    output 'ASUSTek COMPUTER INC ROG XG27AQ R6LMQS089560' enable mode 2560x1440@144.006Hz position 2560,0
+    output 'Dell Inc. DELL U4025QW 5G29934' enable mode 5120x2160@120Hz scale 1.25 position 0,0
 }
